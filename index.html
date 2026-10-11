@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ANOMALY — Anti-Gravity Multiverse</title>
+<meta name="description" content="ANOMALY: fall forever and never hit the ground. A zero-gravity multiverse shooter where physics is a suggestion." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,4 94,74 6,74' fill='none' stroke='%2300f0ff' stroke-width='8'/><circle cx='50' cy='56' r='9' fill='%23ff6b1a'/></svg>" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body id="anomaly-site">
+
+<!-- ══════════════ WEBGL ANTI-GRAVITY CANVAS ══════════════ -->
+<div id="gravity-field" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ══════════════ NAV ══════════════ -->
+<header class="site-nav" id="siteNav">
+  <a href="#hero" class="brand">
+    <span class="brand-mark">A</span>
+    <span class="brand-word">ANOMALY<em>MV-7</em></span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#worlds">Worlds</a>
+    <a href="#arsenal">Arsenal</a>
+    <a href="#store">Top-Up</a>
+    <a href="#intel">Intel</a>
+  </nav>
+  <div class="nav-right">
+    <div class="wallet" id="wallet" title="Live session balance">
+      <span class="chip chip-gold"><i class="ic ic-gold"></i><b data-wallet="gold">0</b></span>
+      <span class="chip chip-diamond"><i class="ic ic-diamond"></i><b data-wallet="diamond">0</b></span>
+      <span class="chip chip-plat"><i class="ic ic-plat"></i><b data-wallet="plat">0</b></span>
+    </div>
+    <button class="btn btn-ghost nav-toggle" id="navToggle" aria-label="Menu">≡</button>
+    <a href="#store" class="btn btn-solid btn-play">PLAY FREE</a>
+  </div>
+</header>
+
+<main>
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="hero">
+  <p class="kicker">// SIGNAL ACQUIRED · GRAVITY CONSTANT: NULLIFIED</p>
+  <h1 class="glitch" data-text="ANOMALY">ANOMALY</h1>
+  <p class="sub">Fall forever and never hit the ground. A zero-G multiverse shooter where physics is a suggestion — and you are the error in it.</p>
+  <div class="cta-row">
+    <a href="#store" class="btn btn-solid btn-big">ENTER THE SANDBOX</a>
+    <a href="#worlds" class="btn btn-line btn-big">WATCH THE DESCENT ▸</a>
+  </div>
+  <div class="ticker-wrap">
+    <div class="ticker" id="ticker">
+      <span>SEASON 04 “INVERSION” LIVE NOW</span><span>·</span>
+      <span>1.2M PLAYERS IN FREE FALL</span><span>·</span>
+      <span>CROSS-MODULE RANKED QUEUES OPEN</span><span>·</span>
+      <span>DOUBLE PLATINUM WEEKEND</span><span>·</span>
+      <span>NEW WORLD: GLASS ORBIT UNLOCKED</span><span>·</span>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><i></i>SCROLL</div>
+</section>
+
+<!-- ══════════════ WORLDS ══════════════ -->
+<section class="section" id="worlds">
+  <header class="sec-head reveal">
+    <p class="kicker">// 01 — MULTIVERSE INDEX</p>
+    <h2>SELECT YOUR <span class="c-orange">DOWNFALL</span></h2>
+    <p class="sec-sub">Every module runs its own broken law of physics. Master one, and the rest are just variations of the same beautiful accident.</p>
+  </header>
+  <div class="cards-grid">
+    <article class="wcard reveal" data-accent="cyan">
+      <div class="wcard-orb orb-cyan"></div>
+      <h3>NEXUS-0 // ZERO-G CORE</h3>
+      <p>The original collapse zone. Momentum never decays — every push carries you across the arena until you choose to stop. Or don't.</p>
+      <ul class="tags"><li>Full free-fall</li><li>No floor damage</li><li>Ranked</li></ul>
+    </article>
+    <article class="wcard reveal" data-accent="blue">
+      <div class="wcard-orb orb-blue"></div>
+      <h3>EMBER DRIFT</h3>
+      <p>A dying furnace-world with inverted updrafts. Plasma storms lift squads hundreds of meters, then drop them without warning.</p>
+      <ul class="tags"><li>Thermal lift</li><li>Hazard tiers</li><li>Squad</li></ul>
+    </article>
+    <article class="wcard reveal" data-accent="orange">
+      <div class="wcard-orb orb-orange"></div>
+      <h3>THE SHATTERFIELD</h3>
+      <p>Reality splintered mid-explosion. Debris orbits you like loyal dogs. Use the wreckage as cover, platform, or projectile.</p>
+      <ul class="tags"><li>Debris physics</li><li>Grab &amp; throw</li><li>Open world</li></ul>
+    </article>
+    <article class="wcard reveal" data-accent="cyan">
+      <div class="wcard-orb orb-mirror"></div>
+      <h3>GLASS ORBIT</h3>
+      <p>A mirror-station where your reflection fires back on a two-second delay. The hardest duels in the multiverse are against yourself.</p>
+      <ul class="tags"><li>Echo combat</li><li>1v1 duel</li><li>Seasonal</li></ul>
+    </article>
+  </div>
+</section>
+
+<!-- ══════════════ ARSENAL ══════════════ -->
+<section class="section section-alt" id="arsenal">
+  <header class="sec-head reveal">
+    <p class="kicker">// 02 — FIELD MANUAL</p>
+    <h2>MASTER THE <span class="c-cyan">VOID</span></h2>
+  </header>
+  <div class="steps">
+    <div class="step reveal"><span class="step-n">01</span><h3>PICK A VECTOR</h3><p>No jump keys. You aim, you push, the anomaly does the rest. Flight is a skill ceiling with no top.</p></div>
+    <div class="step-sep" aria-hidden="true"></div>
+    <div class="step reveal"><span class="step-n">02</span><h3>BEND THE RULES</h3><p>Grab debris, ride updrafts, freeze local time for 1.4 seconds. Every kit is a different way to argue with physics.</p></div>
+    <div class="step-sep" aria-hidden="true"></div>
+    <div class="step reveal"><span class="step-n">03</span><h3>OUTFALL EVERYONE</h3><p>Last vector standing claims the module. Season ranks persist across every universe you break.</p></div>
+  </div>
+</section>
+
+<!-- ══════════════ STORE / TOP-UP ══════════════ -->
+<section class="section" id="store">
+  <header class="sec-head reveal">
+    <p class="kicker">// 03 — INSTANT SANDBOX TOP-UP</p>
+    <h2>ARMORY &amp; <span class="c-gold">CURRENCY</span></h2>
+    <p class="sandbox-note">FREE TESTING MODE — every purchase instantly credits your live session balance. No payment gateway attached; settlement handled manually by backend in production builds.</p>
+  </header>
+
+  <div class="store-tabs reveal" role="tablist">
+    <button class="tab active" data-tab="currency" role="tab">Currencies</button>
+    <button class="tab" data-tab="pass" role="tab">Battle Pass</button>
+    <button class="tab" data-tab="skins" role="tab">Skins</button>
+  </div>
+
+  <div class="tab-panel active" id="panel-currency">
+    <div class="cards-grid grid-3">
+      <article class="scard reveal" data-accent="gold">
+        <div class="scard-icon ic ic-gold big"></div>
+        <h3>GOLD PAIL</h3><p class="price"><b>1,000</b> Gold</p>
+        <p class="desc">Standard matter. Repairs, rerolls, and rent on your orbital shack.</p>
+        <button class="btn btn-line buy" data-cur="gold" data-amt="1000">GRANT FREE</button>
+      </article>
+      <article class="scard reveal featured" data-accent="gold">
+        <span class="flag">BEST VALUE</span>
+        <div class="scard-icon ic ic-gold big"></div>
+        <h3>GOLD BULKHEAD</h3><p class="price"><b>5,500</b> Gold</p>
+        <p class="desc">A full tonne of the good stuff, plus a bonus 10% compressed into the crate.</p>
+        <button class="btn btn-solid buy" data-cur="gold" data-amt="5500">GRANT FREE</button>
+      </article>
+      <article class="scard reveal" data-accent="gold">
+        <div class="scard-icon ic ic-gold big"></div>
+        <h3>GOLD SINGULARITY</h3><p class="price"><b>12,000</b> Gold</p>
+        <p class="desc">So dense it bends your wallet's expectations. Never spends itself.</p>
+        <button class="btn btn-line buy" data-cur="gold" data-amt="12000">GRANT FREE</button>
+      </article>
+      <article class="scard reveal" data-accent="cyan">
+        <div class="scard-icon ic ic-diamond big"></div>
+        <h3>Diamond Shard</h3><p class="price"><b>50</b> Diamonds</p>
+        <p class="desc">Crystallized gravity. The premium path to skins, passes, and bad decisions.</p>
+        <button class="btn btn-line buy" data-cur="diamond" data-amt="50">GRANT FREE</button>
+      </article>
+      <article class="scard reveal" data-accent="cyan">
+        <div class="scard-icon ic ic-diamond big"></div>
+        <h3>Diamond Cluster</h3><p class="price"><b>200</b> Diamonds</p>
+        <p class="desc">Geode-grade. Formed in the Shatterfield under pressures that would flatten you.</p>
+        <button class="btn btn-line buy" data-cur="diamond" data-amt="200">GRANT FREE</button>
+      </article>
+      <article class="scard reveal" data-accent="cyan">
+        <div class="scard-icon ic ic-diamond big"></div>
+        <h3>Diamond Vein</h3><p class="price"><b>500</b> Diamonds</p>
+        <p class="desc">An entire seam, mined by drones who ask no questions.</p>
+        <button class="btn btn-line buy" data-cur="diamond" data-amt="500">GRANT FREE</button>
+      </article>
+      <article class="scard reveal" data-accent="blue">
+        <div class="scard-icon ic ic-plat big"></div>
+        <h3>Platinum Ingot</h3><p class="price"><b>100</b> Platinum</p>
+        <p class="desc">The multiverse reserve currency. Spends anywhere reality does.</p>
+        <button class="btn btn-line buy" data-cur="plat" data-amt="100">GRANT FREE</button>
+      </article>
+      <article class="scard reveal" data-accent="blue">
+        <div class="scard-icon ic ic-plat big"></div>
+        <h3>Platinum Core</h3><p class="price"><b>300</b> Platinum</p>
+        <p class="desc">Reactor-grade bars, still warm from the collapse.</p>
+        <button class="btn btn-line buy" data-cur="plat" data-amt="300">GRANT FREE</button>
+      </article>
+      <article class="scard reveal" data-accent="blue">
+        <div class="scard-icon ic ic-plat big"></div>
+        <h3>Platinum Vault</h3><p class="price"><b>1,000</b> Platinum</p>
+        <p class="desc">A vault-key worth of pure influence. Unlocks the owner-tier lounge.</p>
+        <button class="btn btn-line buy" data-cur="plat" data-amt="1000">GRANT FREE</button>
+      </article>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="panel-pass">
+    <div class="cards-grid grid-2">
+      <article class="scard pass reveal" data-accent="orange">
+        <div class="scard-icon ic ic-pass big"></div>
+        <h3>Battle Pass — Free Track</h3>
+        <p class="price">No cost · 25 tiers</p>
+        <p class="desc">Gold drops, two rare skins, and enough fuel to prove you belong in the season.</p>
+        <button class="btn btn-line buy" data-cur="gold" data-amt="500" data-item="Free Track activated">CLAIM TRACK</button>
+      </article>
+      <article class="scard pass reveal featured" data-accent="orange">
+        <span class="flag">SEASON 04</span>
+        <div class="scard-icon ic ic-pass big"></div>
+        <h3>Inversion Premium Pass</h3>
+        <p class="price"><b>1,200</b> Diamonds · 100 tiers + instant Tier 25 boost</p>
+        <p class="desc">Exclusive “Event Horizon” legendary skin, animated banner, 5,000 Gold per act, and the right to say you were early.</p>
+        <button class="btn btn-solid buy" data-cur="diamond" data-amt="-1200" data-grant="pass" data-item="Inversion Premium Pass">ACTIVATE PASS</button>
+      </article>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="panel-skins">
+    <div class="cards-grid grid-3">
+      <article class="scard skin reveal" data-accent="cyan">
+        <div class="skin-preview sp-cyan"></div>
+        <h3>Void Drifter</h3><p class="price"><b>800</b> Gold</p>
+        <p class="desc">Matte-black suit that drinks light. Trail: none. Mercy: also none.</p>
+        <button class="btn btn-line buy" data-cur="gold" data-amt="-800" data-item="Void Drifter skin">EQUIP FREE</button>
+      </article>
+      <article class="scard skin reveal" data-accent="orange">
+        <div class="skin-preview sp-ember"></div>
+        <h3>Ember Wraith</h3><p class="price"><b>60</b> Diamonds</p>
+        <p class="desc">Living plasma edges, reactive heat shader, ember particle trail.</p>
+        <button class="btn btn-line buy" data-cur="diamond" data-amt="-60" data-item="Ember Wraith skin">EQUIP FREE</button>
+      </article>
+      <article class="scard skin reveal" data-accent="blue">
+        <div class="skin-preview sp-glacier"></div>
+        <h3>Glacier Phantom</h3><p class="price"><b>120</b> Diamonds</p>
+        <p class="desc">Frozen refraction armor. Sounds muffle near you. So do your enemies.</p>
+        <button class="btn btn-line buy" data-cur="diamond" data-amt="-120" data-item="Glacier Phantom skin">EQUIP FREE</button>
+      </article>
+      <article class="scard skin reveal" data-accent="gold">
+        <div class="skin-preview sp-gilded"></div>
+        <h3>Gilded Collapse</h3><p class="price"><b>250</b> Platinum</p>
+        <p class="desc">Liquid-gold finish with real-time debris reflections. Loud on purpose.</p>
+        <button class="btn btn-line buy" data-cur="plat" data-amt="-250" data-item="Gilded Collapse skin">EQUIP FREE</button>
+      </article>
+      <article class="scard skin reveal featured" data-accent="orange">
+        <span class="flag">LEGENDARY</span>
+        <div class="skin-preview sp-horizon"></div>
+        <h3>Event Horizon</h3><p class="price"><b>300</b> Platinum · Season exclusive</p>
+        <p class="desc">A wearable singularity. Spaghettifies ambient light and egos in equal measure.</p>
+        <button class="btn btn-solid buy" data-cur="plat" data-amt="-300" data-item="Event Horizon skin">EQUIP FREE</button>
+      </article>
+      <article class="scard skin reveal" data-accent="cyan">
+        <div class="skin-preview sp-static"></div>
+        <h3>Static Reverie</h3><p class="price"><b>1,500</b> Gold</p>
+        <p class="desc">Glitch-weave fabric that renders you 3 frames behind. Fights lag with style.</p>
+        <button class="btn btn-line buy" data-cur="gold" data-amt="-1500" data-item="Static Reverie skin">EQUIP FREE</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ INTEL ══════════════ -->
+<section class="section section-alt" id="intel">
+  <header class="sec-head reveal">
+    <p class="kicker">// 04 — INTERCEPTED TRANSMISSIONS</p>
+    <h2>FIELD <span class="c-blue">INTEL</span></h2>
+  </header>
+  <div class="news-grid">
+    <article class="ncard reveal">
+      <time datetime="2026-10-09">OCT 09 · 2026</time>
+      <h3>Patch 4.2 — “Terminal Velocity”</h3>
+      <p>Updraft stacking now capped at triple-layer. Shatterfield debris gains mass-based throwing arcs. Your 400-hour mains have opinions; we read three of them.</p>
+    </article>
+    <article class="ncard reveal">
+      <time datetime="2026-10-02">OCT 02 · 2026</time>
+      <h3>Glass Orbit enters ranked rotation</h3>
+      <p>The echo-duel module graduates from experimental to competitive queue this weekend only. Reflections now lead by 0.3s at all tiers.</p>
+    </article>
+    <article class="ncard reveal">
+      <time datetime="2026-09-24">SEP 24 · 2026</time>
+      <h3>Anomaly Con registration open</h3>
+      <p>16-module invitational, winner takes the Gravity Crown and $250K. Qualifiers run inside Nexus-0 from Oct 20.</p>
+    </article>
+  </div>
+</section>
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div>
+      <a href="#hero" class="brand brand-sm"><span class="brand-mark">A</span><span class="brand-word">ANOMALY</span></a>
+      <p class="foot-tag">Built inside a collapse event.<br/>© 2026 Anomaly Interactive. All vectors reserved.</p>
+    </div>
+    <div class="foot-col"><h4>Game</h4><a href="#worlds">Worlds</a><a href="#arsenal">Field Manual</a><a href="#store">Top-Up</a></div>
+    <div class="foot-col"><h4>Company</h4><a href="#intel">Newsroom</a><a href="#intel">Careers</a><a href="#intel">Support</a></div>
+    <div class="foot-col"><h4>Legal</h4><a href="#intel">Privacy Directive</a><a href="#intel">Terms of Fall</a><a href="#intel">Cookie Protocol</a></div>
+  </div>
+</footer>
+
+<!-- ══════════════ ADMIN ACCESS PANEL (hidden) ══════════════ -->
+<div class="admin-overlay" id="adminOverlay" hidden>
+  <div class="admin-frame">
+    <div class="admin-frame-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <button class="admin-close" id="adminClose" aria-label="Abort">✕ ABORT</button>
+    <p class="admin-id">// ROOT GATEWAY · MV-7 CLEARANCE REQUIRED</p>
+    <h2 class="admin-title">OWNER AUTHENTICATION</h2>
+
+    <div class="bio-row">
+      <div class="face-scan" id="faceScan">
+        <svg viewBox="0 0 120 140" class="face-svg" aria-hidden="true">
+          <path d="M60 12 C34 12 24 34 26 58 C28 86 40 112 60 128 C80 112 92 86 94 58 C96 34 86 12 60 12 Z"/>
+          <ellipse cx="46" cy="58" rx="5" ry="3"/><ellipse cx="74" cy="58" rx="5" ry="3"/>
+          <path d="M60 66 L56 84 L64 84 Z"/><path d="M48 98 Q60 106 72 98"/>
+          <path d="M38 40 L52 44 M82 40 L68 44"/>
+        </svg>
+        <div class="scan-bar" id="scanBar"></div>
+        <div class="face-status" id="faceStatus">FACE SCAN · STANDBY</div>
+      </div>
+      <div class="finger-scan" id="fingerScan">
+        <svg viewBox="0 0 90 110" class="fp-svg" aria-hidden="true">
+          <g id="fpLines">
+            <path d="M45 10 C25 10 15 30 15 55 C15 80 28 100 45 104"/>
+            <path d="M45 20 C32 20 24 36 24 56 C24 76 33 92 45 96"/>
+            <path d="M45 30 C38 30 33 42 33 57 C33 72 39 84 45 88"/>
+            <path d="M45 40 C43 40 42 48 42 58 C42 68 43 76 45 80"/>
+            <path d="M55 14 C70 18 75 36 75 56 C75 78 66 94 52 102"/>
+            <path d="M55 26 C66 28 66 42 66 56 C66 72 60 84 52 92"/>
+            <path d="M55 38 C59 40 58 50 58 57 C58 66 56 74 52 82"/>
+          </g>
+        </svg>
+        <div class="fp-sweep" id="fpSweep"></div>
+        <div class="face-status" id="fpStatus">PRINT · AWAITING</div>
+      </div>
+    </div>
+
+    <form class="cred-form" id="credForm" autocomplete="off">
+      <label for="masterKey">MASTER KEY</label>
+      <div class="pw-wrap">
+        <input type="password" id="masterKey" name="masterKey" placeholder="••••••••••••••" spellcheck="false" />
+        <button type="button" class="pw-eye" id="pwEye" aria-label="Reveal key">◉</button>
+      </div>
+      <button type="submit" class="btn btn-solid btn-auth" id="authBtn">AUTHENTICATE</button>
+      <p class="auth-msg" id="authMsg" role="status"></p>
+    </form>
+    <p class="admin-hint">TIP FOR TESTERS · SECRET ENTRY: type <kbd>↑ ↑ ↓ ↓ ← → ← → B A</kbd> anywhere, or append <kbd>#root-gateway</kbd> to the URL.</p>
+  </div>
+</div>
+
+<!-- ══════════════ OWNER CONTROL CENTER ══════════════ -->
+<div class="admin-overlay admin-console" id="adminConsole" hidden>
+  <div class="console-frame">
+    <header class="con-head">
+      <div><h2>ANOMALY <span class="c-cyan">OWNER CONTROL CENTER</span></h2>
+      <p class="con-sub">GLOBAL COMMAND · TIER-0 CLEARANCE · SESSION <b id="sessionId">—</b></p></div>
+      <div class="con-clock"><span id="conTime">--:--:--</span><small id="conDate">—</small></div>
+      <button class="admin-close con-exit" id="consoleExit">✕ LOCK</button>
+    </header>
+
+    <div class="con-body">
+      <aside class="con-side">
+        <button class="side-btn active" data-view="metrics">METRICS</button>
+        <button class="side-btn" data-view="econ">ECONOMY</button>
+        <button class="side-btn" data-view="servers">SERVERS</button>
+        <button class="side-btn" data-view="users">CENSUS</button>
+        <button class="side-btn" data-view="sys">SYSTEM</button>
+        <div class="con-power">
+          <button class="btn btn-line" id="logoutBtn">LOG OUT</button>
+        </div>
+      </aside>
+
+      <section class="con-main">
+        <!-- METRICS -->
+        <div class="view active" id="view-metrics">
+          <div class="stat-row">
+            <div class="stat"><small>ACTIVE PLAYERS</small><b id="mPlayers">0</b><i class="up" id="mPlayersD">▲ 0%</i></div>
+            <div class="stat"><small>SESSIONS / MIN</small><b id="mSpm">0</b><i class="up">▲ LIVE</i></div>
+            <div class="stat"><small>TOP-UP VOLUME (24H)</small><b id="mVol">$0</b><i class="up" id="mVolD">▲ 0%</i></div>
+            <div class="stat"><small>GLOBAL UPTIME</small><b id="mUp">99.98%</b><i class="dn">SLA 99.9%</i></div>
+          </div>
+          <div class="chart-card"><p class="chart-title">CONCURRENT DESCENT — LAST 60 READINGS</p><canvas id="chartMain" width="900" height="240"></canvas></div>
+          <div class="chart-row">
+            <div class="chart-card"><p class="chart-title">WORLD LOAD DISTRIBUTION</p><div id="worldBars" class="bars"></div></div>
+            <div class="chart-card"><p class="chart-title">EVENT STREAM</p><ul class="feed" id="eventFeed"></ul></div>
+          </div>
+        </div>
+
+        <!-- ECONOMY -->
+        <div class="view" id="view-econ">
+          <div class="econ-grid">
+            <div class="econ-card">
+              <h3>INFLATION ENGINE</h3>
+              <p class="econ-desc">Global currency drift applied to store prices and drops. Push too hard and players riot in the Shatterfield.</p>
+              <div class="slider-block"><label>Market inflation <b id="inflVal">0.0%</b></label>
+                <input type="range" id="inflSlider" min="-5" max="25" step="0.5" value="0" /></div>
+              <div class="slider-block"><label>Drop rate multiplier <b id="dropVal">1.0×</b></label>
+                <input type="range" id="dropSlider" min="0.5" max="5" step="0.1" value="1" /></div>
+              <div class="slider-block"><label>Pass XP curve <b id="xpVal">1.0×</b></label>
+                <input type="range" id="xpSlider" min="0.5" max="3" step="0.1" value="1" /></div>
+              <div class="econ-out"><span>Projected price index</span><b id="priceIdx">100.0</b></div>
+            </div>
+            <div class="econ-card">
+              <h3>CURRENCY SINKS &amp; FAUCETS</h3>
+              <div class="bars bars-money" id="moneyBars"></div>
+              <div class="toggle-row">
+                <label class="tgl"><input type="checkbox" id="tglPlatBonus" checked /><span class="tgl-ui"></span>Double Platinum Weekend</label>
+                <label class="tgl"><input type="checkbox" id="tglSink" /><span class="tgl-ui"></span>Emergency Gold Sink (+10%)</label>
+                <label class="tgl"><input type="checkbox" id="tglWhales" checked /><span class="tgl-ui"></span>Whale detection heuristics</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SERVERS -->
+        <div class="view" id="view-servers">
+          <div class="srv-head">
+            <h3>LIVE NODE GRID</h3>
+            <div class="srv-actions">
+              <button class="btn btn-line" id="restartAll">RESTART ALL NODES</button>
+              <button class="btn btn-solid" id="maintenanceBtn">TOGGLE MAINTENANCE</button>
+            </div>
+          </div>
+          <div class="srv-grid" id="srvGrid"></div>
+          <p class="srv-status" id="srvStatus">STATUS: NOMINAL · MAINTENANCE FLAG: OFF</p>
+        </div>
+
+        <!-- USERS -->
+        <div class="view" id="view-users">
+          <h3>REAL-TIME PLAYER CENSUS</h3>
+          <div class="search-row">
+            <input type="text" id="userSearch" placeholder="Filter by handle, world, rank…" />
+            <select id="userSort"><option value="score">Sort: Score</option><option value="level">Sort: Level</option><option value="spend">Sort: Spend</option></select>
+          </div>
+          <div class="table-wrap"><table class="dtable"><thead><tr>
+            <th>UID</th><th>HANDLE</th><th>WORLD</th><th>RANK</th><th>LEVEL</th><th>SPEND (24H)</th><th>STATUS</th><th>CONTROL</th>
+          </tr></thead><tbody id="userRows"></tbody></table></div>
+        </div>
+
+        <!-- SYSTEM -->
+        <div class="view" id="view-sys">
+          <div class="sys-grid">
+            <div class="sys-card"><h3>THREAT MATRIX</h3><ul class="threats">
+              <li><i class="dot g"></i>Injection attempts blocked <b id="tInj">0</b></li>
+              <li><i class="dot g"></i>Session hijaks denied <b id="tHij">0</b></li>
+              <li><i class="dot o"></i>Anomalous spend patterns <b id="tWh">0</b></li>
+              <li><i class="dot c"></i>Biometric gate integrity <b>100%</b></li>
+            </ul></div>
+            <div class="sys-card"><h3>ACCESS LOG</h3><ul class="log" id="accessLog"></ul></div>
+            <div class="sys-card sys-danger"><h3>DESTRUCTIVE CONSOLE</h3>
+              <p class="danger-note">Irreversible operations. Sandbox simulation only — wired to no real backend.</p>
+              <button class="btn btn-line danger" id="wipeBtn">PURGE TEST LEDGERS</button>
+              <button class="btn btn-line danger" id="resetEconBtn">RESET ECONOMY</button>
+              <p class="danger-confirm" id="dangerConfirm" hidden>HOLD TO CONFIRM…</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TOASTS ══════════════ -->
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
