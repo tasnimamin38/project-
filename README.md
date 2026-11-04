@@ -22,3 +22,9 @@ The active development branch is Godot-first. The old Unity prototype pull reque
 The playable slice is a development foundation, not a finished multiplayer product. Real account authentication, authoritative online economy, payment processing, cloud saves, matchmaking, dedicated server hosting, final art/audio, anti-cheat, and production operations still require implementation and testing. The store must not accept real payments until server-side validation and a payment provider are integrated.
 
 See docs/ARCHITECTURE.md, docs/ROADMAP.md, and docs/BACKEND_CONTRACT.md.
+
+
+## Publish a browser build
+The repository includes a Godot Web export preset and a manual GitHub Actions workflow. In GitHub, open Settings → Pages and set Build and deployment → Source to GitHub Actions. Then open Actions → Godot Web Build and select Run workflow. Use publish=false first to create a downloadable build artifact; use publish=true after Pages is enabled to deploy the portal and playable prototype.
+
+The portal is served at the repository Pages URL; the game build is under /game/. The browser build is a lightweight prototype target, not the native high-fidelity release. Real-time multiplayer still needs a browser-compatible transport and a separately hosted authoritative server.
