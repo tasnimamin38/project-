@@ -9,7 +9,7 @@ const $  = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const fmt = n => Math.round(n).toLocaleString('en-US');
 
-const MASTER_KEY = 'Tasnim@25714$';          // owner credential (front-end demo gate)
+const MASTER_KEY = null; // Static builds must never contain an owner credential.
 const SECRET_HASH = '#root-gateway';          // hidden deep path
 const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
 
@@ -368,6 +368,11 @@ $('#pwEye').addEventListener('click', () => {
 $('#credForm').addEventListener('submit', e => {
   e.preventDefault();
   const msg = $('#authMsg');
+  if (MASTER_KEY === null) {
+    msg.textContent = 'OWNER ACCESS DISABLED · CONNECT A TRUSTED SERVER AUTHENTICATION SERVICE.';
+    msg.className = 'auth-msg bad';
+    return;
+  }
   const val = $('#masterKey').value;
   if(val !== MASTER_KEY){
     msg.textContent = 'ACCESS DENIED · KEY REJECTED · INCIDENT LOGGED';

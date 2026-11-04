@@ -1,0 +1,30 @@
+# Godot generated files
+.godot/
+.import/
+.export/
+export.cfg
+export_presets.cfg
+
+# Build outputs
+build/
+dist/
+*.exe
+*.pck
+*.apk
+*.aab
+*.zip
+
+# Secrets and local settings
+.env
+.env.*
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

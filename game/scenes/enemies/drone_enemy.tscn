@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/drone_controller.gd" id="1_enemy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape_drone"]
+radius = 0.62
+
+[sub_resource type="SphereMesh" id="SphereMesh_drone"]
+radius = 0.58
+height = 1.16
+
+[node name="HostileDrone" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_enemy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape_drone")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_drone")
