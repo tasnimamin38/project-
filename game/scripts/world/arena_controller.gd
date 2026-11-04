@@ -103,5 +103,5 @@ func _spawn_gravity_field() -> void:
     var field := Node3D.new()
     field.name = "NexusGravityField"
     field.set_script(GRAVITY_SCRIPT)
-    field.global_position = Vector3(0.0, 2.0, -2.0)
     add_child(field)
+    field.global_position = Vector3(0.0, 2.0, -2.0)
