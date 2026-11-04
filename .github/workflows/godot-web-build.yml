@@ -1,6 +1,22 @@
 name: Godot Web Build
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - "game/**"
+      - "assets/**"
+      - "index.html"
+      - ".github/workflows/godot-web-build.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "game/**"
+      - "assets/**"
+      - "index.html"
+      - ".github/workflows/godot-web-build.yml"
   workflow_dispatch:
     inputs:
       publish:
